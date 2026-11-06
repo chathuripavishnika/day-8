@@ -1,4 +1,3 @@
-
 const customerList = [];
 
 function btnclickme(inputId, listId) {
@@ -28,37 +27,41 @@ function addcustomer() {
     let customerAddress = document.getElementById("textAddress").value;
     let customerSalary = document.getElementById("textSalary").value;
 
-    if (!customerId || !customerName || !customerAge ||
-        !customerAddress || !customerSalary) {
-
-        alert("Please fill all fields");
-        return;
-    }
-
-    let customer = {
-        id: customerId,
-        name: customerName,
-        age: customerAge,
-        address: customerAddress,
-        salary: customerSalary
-    };
-
-    customerList.push(customer);
-
     let table = document.getElementById("customerTable");
 
-    let row = table.insertRow();
+    let tr = document.createElement("tr");
 
-    row.insertCell(0).innerHTML = customer.id;
-    row.insertCell(1).innerHTML = customer.name;
-    row.insertCell(2).innerHTML = customer.age;
-    row.insertCell(3).innerHTML = customer.address;
-    row.insertCell(4).innerHTML = customer.salary;
+    tr.innerHTML = `
+        <td>${customerId}</td>
+        <td>${customerName}</td>
+        <td>${customerAge}</td>
+        <td>${customerAddress}</td>
+        <td>${customerSalary}</td>
+    `;
 
-    document.getElementById("textid").value = "";
-    document.getElementById("textName").value = "";
-    document.getElementById("textAge").value = "";
-    document.getElementById("textAddress").value = "";
-    document.getElementById("textSalary").value = "";
+    table.appendChild(tr);
+}
 
+
+function addItem() {
+
+    let itemName = document.getElementById("textItemName").value;
+    let itemNumber = document.getElementById("textItemNumber").value;
+    let itemPrice = document.getElementById("textItemPrice").value;
+    let itemCode = document.getElementById("textItemCode").value;
+    let itemWeight = document.getElementById("textItemWeight").value;
+
+    let table = document.getElementById("itemTable");
+
+    let tr = document.createElement("tr");
+
+    tr.innerHTML = `
+        <td>${itemName}</td>
+        <td>${itemNumber}</td>
+        <td>${itemPrice}</td>
+        <td>${itemCode}</td>
+        <td>${itemWeight}</td>
+    `;
+
+    table.appendChild(tr);
 }
