@@ -14,7 +14,7 @@ body{
 .col {
     width: 50%;
     padding: 20px;
-    background-color: lightslategray;
+    background-color: dimgray;
     border: 2px solid black;
     border-radius: 10px;
 }
@@ -30,10 +30,15 @@ button {
 }
 
 .back{
-    background-color:darkslateblue;
-    color: azure;
+    background-color:white;
+    color: black;
 }
 
 h3{
     color: azure;
+}
+
+.row{
+    background-color: lightslategray;
+    color: white;
 }
